@@ -1,0 +1,170 @@
+/* ====== Estilos generales ====== */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #dfdcdc;
+  color: #0a0808;
+}
+
+/* ====== Encabezado ====== */
+header {
+  background: linear-gradient(135deg, #64eefa, #007bff);
+  color: rgb(2, 0, 0);
+  text-align: center;
+  padding: 30px 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+header p {
+  margin-top: 5px;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* ====== Main ====== */
+main {
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+  padding-bottom: 60px;
+}
+
+/* Selector de municipio */
+section label, section select {
+  display: block;
+  margin-bottom: 15px;
+}
+
+label {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-right: 10px;
+}
+
+select {
+  font-size: 1rem;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0px 0px 5px rgba(0,123,255,0.5);
+}
+
+/* ====== Contenedor de datos principal ====== */
+#contenido {
+  display: grid;
+  grid-template-columns: 1fr; /* Cada sección ocupa toda la fila */
+  gap: 20px;
+}
+
+/* ====== Secciones ====== */
+.section-seleccionada {
+  display: grid; /* Grid para los cuadros internos */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+  margin-bottom: 30px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.section-seleccionada h4 {
+  grid-column: 1 / -1; /* Título ocupa todo el ancho */
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  padding-left: 8px;
+  border-left: 6px solid;
+}
+
+/* Colores por sección */
+.section-seleccionada.datos-generales h4 {
+  color: #004d99;
+  border-color: #007bff;
+}
+
+.section-seleccionada.sexo h4 {
+  color: #d6336c;
+  border-color: #e83e8c;
+}
+
+.section-seleccionada.edad h4 {
+  color: #fd7e14;
+  border-color: #ff922b;
+}
+
+.section-seleccionada.pueblos h4 {
+  color: #198754;
+  border-color: #20c997;
+}
+
+/* ====== Tarjetas ====== */
+.card {
+  background: white;
+  padding: 15px 20px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 8px 15px rgba(0,0,0,0.15);
+}
+
+.card h6 {
+  margin-top: 0;
+  color: #333;
+  font-size: 1rem;
+}
+
+.card p {
+  margin: 5px 0;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* ====== Footer ====== */
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #111;
+  color: #eee;
+  margin-top: 40px;
+  font-size: 0.9rem;
+}
+
+/* ====== Responsivo ====== */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+  main {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.2rem;
+  }
+  header p {
+    font-size: 0.85rem;
+  }
+  select {
+    width: 100%;
+  }
+  .section-seleccionada {
+    grid-template-columns: 1fr; /* Cada tarjeta en columna en móvil */
+  }
+}
